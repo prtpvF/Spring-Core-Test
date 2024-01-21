@@ -10,31 +10,35 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <bean id="classicalMusic"
-          class="test.spring.core.ClassicalMusic">
-    </bean>
-
-    <bean id="rockMusic"
-          class="test.spring.core.RockMusic">
-    </bean>
-
-    <bean id="grangeMusic"
-          class="test.spring.core.GrangeMusic">
-    </bean>
-
-
-    <bean id="musicPlayer"
-          class="test.spring.core.MusicPlayer"
-          scope="prototype">
-        <property name="music">
-            <list>
-                <ref bean="classicalMusic"></ref>
-                <ref bean="grangeMusic"></ref>
-                <ref bean="rockMusic"></ref>
-            </list>
-        </property>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
+          class="test.spring.core.ClassicalMusic"
+          init-method="init"
+          destroy-method="destroy"
+          factory-method="getClassicalMusic">
 
     </bean>
+
+    <!--    <bean id="rockMusic"-->
+    <!--          class="test.spring.core.RockMusic">-->
+    <!--    </bean>-->
+
+    <!--    <bean id="grangeMusic"-->
+    <!--          class="test.spring.core.GrangeMusic">-->
+    <!--    </bean>-->
+
+
+    <!--    <bean id="musicPlayer"-->
+    <!--          class="test.spring.core.MusicPlayer"-->
+    <!--          scope="prototype">-->
+    <!--        <property name="music">-->
+    <!--            <list>-->
+    <!--                <ref bean="classicalMusic"></ref>-->
+    <!--                <ref bean="grangeMusic"></ref>-->
+    <!--                <ref bean="rockMusic"></ref>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--        <property name="name" value="${musicPlayer.name}"/>-->
+    <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+
+    <!--    </bean>-->
 
 </beans>
