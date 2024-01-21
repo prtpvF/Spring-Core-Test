@@ -9,13 +9,14 @@
 
     <context:property-placeholder location="musicPlayer.properties"/>
 
-    <bean id="classicalMusic"
-          class="test.spring.core.ClassicalMusic"
-          init-method="init"
-          destroy-method="destroy"
-          factory-method="getClassicalMusic">
+<!--    <bean id="classicalMusic"-->
+<!--          class="test.spring.core.ClassicalMusic"-->
+<!--          init-method="init"-->
+<!--          destroy-method="destroy"-->
+<!--          factory-method="getClassicalMusic">-->
 
-    </bean>
+<!--    </bean>-->
+
 
     <!--    <bean id="rockMusic"-->
     <!--          class="test.spring.core.RockMusic">-->
@@ -41,4 +42,5 @@
 
     <!--    </bean>-->
 
+<context:component-scan base-package="test.spring.core"/>
 </beans>
