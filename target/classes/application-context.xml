@@ -21,7 +21,10 @@
           class="test.spring.core.GrangeMusic">
     </bean>
 
-    <bean id="musicBean" class="test.spring.core.MusicPlayer">
+
+    <bean id="musicPlayer"
+          class="test.spring.core.MusicPlayer"
+          scope="prototype">
         <property name="music">
             <list>
                 <ref bean="classicalMusic"></ref>
@@ -29,12 +32,9 @@
                 <ref bean="rockMusic"></ref>
             </list>
         </property>
-    </bean>
-
-    <bean id="musicPlayer"
-          class="test.spring.core.MusicPlayer">
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
+
     </bean>
 
 </beans>
